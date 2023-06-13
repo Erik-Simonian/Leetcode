@@ -25,27 +25,28 @@ Constraints:
     1 <= nums.length <= 105
     -104 <= nums[i] <= 104
     1 <= k <= nums.length"""
+import collections
 
 
 class Solution239:
     def maxSlidingWindow(self, nums: list[int], k: int) -> list[int]:
-        if k >= len(nums):
-            return nums
+        deq = collections.deque()
         left = 0
         right = 0
-        count_k = {}
         result = []
 
-        for i in range(len(nums)):
-            count_k[nums[right]] = 1 + count_k.get(nums[right], 0)
+        while right < len(nums):
+            while deq and nums[deq[-1]] < nums[right]:
+                deq.pop()
+            deq.append(right)
+
+            if left > deq[0]:
+                deq.popleft()
+
+            if (right + 1) >= k:
+                result.append(nums[deq[0]])
+
             right += 1
-
-            if right - left == 3:
-                max_k = max(count_k)
-                result.append(max_k)
-                count_k.pop(nums[left])
-                left += 1
-
         return result
 
 
