@@ -1,4 +1,4 @@
-from binarytree import Node                         # Added binarytree library for better answer visualisation
+from binarytree import Node  # Added binarytree library for better answer visualisation
 
 """105. Construct Binary Tree from Preorder and Inorder Traversal (Difficulty: Medium).
 
@@ -38,11 +38,12 @@ class Solution105:
 
         root = Node(preorder[0])
         middle = inorder.index(preorder[0])
-        root.left = self.buildTree(preorder[1:middle+1], inorder[:middle])
-        root.right = self.buildTree(preorder[middle+1:], inorder[middle+1:])
+        root.left = self.buildTree(preorder[1:middle + 1], inorder[:middle])
+        root.right = self.buildTree(preorder[middle + 1:], inorder[middle + 1:])
 
         return root
 
 
 solution = Solution105()
 print(solution.buildTree(preorder=[3, 9, 20, 15, 7], inorder=[9, 3, 15, 20, 7]))
+print(solution.buildTree(preorder=[-1], inorder=[-1]))
