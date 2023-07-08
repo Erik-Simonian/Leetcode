@@ -40,14 +40,14 @@ Constraints:
     board.length == 9
     board[i].length == 9
     board[i][j] is a digit 1-9 or '.'."""
-import collections
 
 
 class Solution36:
     def isValidSudoku(self, board: list[list[str]]) -> bool:
-        columns = collections.defaultdict(set)
-        rows = collections.defaultdict(set)
-        squares = collections.defaultdict(set)
+        from collections import defaultdict
+        columns = defaultdict(set)
+        rows = defaultdict(set)
+        squares = defaultdict(set)
 
         for row in range(9):
             for col in range(9):
