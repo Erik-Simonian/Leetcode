@@ -33,6 +33,7 @@ Constraints:
     There will be at most 2 dots in word for search queries.
     At most 104 calls will be made to addWord and search."""
 
+
 class TrieNode:
     def __init__(self):
         self.children = {}
@@ -54,11 +55,10 @@ class WordDictionary:
 
         current_node.is_word = True
 
-
     def search(self, word: str) -> bool:
+
         def dfs(index, root):
             current_node = self.root
-
             for i in range(index, len(word)):
                 char = word[i]
 
@@ -76,8 +76,6 @@ class WordDictionary:
             return current_node.is_word
 
         return dfs(0, self.root)
-
-
 
 
 obj = WordDictionary()
