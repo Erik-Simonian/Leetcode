@@ -1,4 +1,5 @@
 """617. Merge Two Binary Trees (Difficulty: Easy).
+https://leetcode.com/problems/merge-two-binary-trees/
 
 You are given two binary trees root1 and root2.
 Imagine that when you put one of them to cover the other, some nodes of the two trees are overlapped
@@ -10,6 +11,7 @@ Return the merged tree.
 Note: The merging process must start from the root nodes of both trees.
 
 Example 1:
+https://assets.leetcode.com/uploads/2021/02/05/merge.jpg
 Input: root1 = [1,3,2,5], root2 = [2,1,3,null,4,null,7]
 Output: [3,4,5,5,4,null,7]
 

@@ -1,4 +1,5 @@
 """1993. Operations on Tree (Difficulty: Medium)
+https://leetcode.com/problems/operations-on-tree/description/
 
 You are given a tree with n nodes numbered from 0 to n - 1 in the form of a parent array parent
 where parent[i] is the parent of the ith node. The root of the tree is node 0, so parent[0] = -1 since it has no parent.
@@ -31,7 +32,7 @@ Implement the LockingTree class:
     or false otherwise. If it is possible, the node num will be upgraded.
 
 Example 1:
-
+https://assets.leetcode.com/uploads/2021/07/29/untitled.png
 Input
 ["LockingTree", "lock", "unlock", "unlock", "lock", "upgrade", "lock"]
 [[[-1, 0, 0, 1, 1, 2, 2]], [2, 2], [2, 3], [2, 2], [4, 5], [0, 1], [0, 1]]

@@ -1,11 +1,11 @@
-from binarytree import Node  # Added binarytree library for better answer visualisation
-
 """105. Construct Binary Tree from Preorder and Inorder Traversal (Difficulty: Medium).
+https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
 
 Given two integer arrays preorder and inorder where preorder is the preorder traversal of a binary tree
 and inorder is the inorder traversal of the same tree, construct and return the binary tree.
 
 Example 1:
+https://assets.leetcode.com/uploads/2021/02/19/tree.jpg
 Input: preorder = [3,9,20,15,7], inorder = [9,3,15,20,7]
 Output: [3,9,20,null,null,15,7]
 
@@ -21,7 +21,9 @@ Constraints:
     Each value of inorder also appears in preorder.
     preorder is guaranteed to be the preorder traversal of the tree.
     inorder is guaranteed to be the inorder traversal of the tree."""
-import collections
+
+
+from binarytree import Node  # Added binarytree library for better answer visualisation
 
 
 class TreeNode:

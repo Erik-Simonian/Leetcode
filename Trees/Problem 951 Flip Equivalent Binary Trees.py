@@ -1,4 +1,5 @@
 """951. Flip Equivalent Binary Trees (Difficulty: Medium).
+https://leetcode.com/problems/flip-equivalent-binary-trees/
 
 For a binary tree T, we can define a flip operation as follows: choose any node,
 and swap the left and right child subtrees.
