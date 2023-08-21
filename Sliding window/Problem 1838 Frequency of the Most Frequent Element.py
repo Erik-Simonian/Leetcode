@@ -1,4 +1,5 @@
 """1838. Frequency of the Most Frequent Element (Difficulty: Medium).
+https://leetcode.com/problems/frequency-of-the-most-frequent-element/
 
 The frequency of an element is the number of times it occurs in an array.
 You are given an integer array nums and an integer k. In one operation,
