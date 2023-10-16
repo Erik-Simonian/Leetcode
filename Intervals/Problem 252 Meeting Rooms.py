@@ -1,4 +1,4 @@
-"""920. Meeting Rooms(Difficulty: Easy)
+"""252. Meeting Rooms(Difficulty: Easy).
 https://leetcode.com/problems/meeting-rooms/
 https://www.lintcode.com/problem/920/ (free version)
 
@@ -16,7 +16,7 @@ Output: true
 Explanation: Two times will not conflict"""
 
 
-class Solution920:
+class Solution252:
     def can_attend_meetings(self, intervals: list) -> bool:
         intervals.sort()
         last = intervals[0]
@@ -28,6 +28,6 @@ class Solution920:
         return True
 
 
-solution = Solution920()
+solution = Solution252()
 print(solution.can_attend_meetings(intervals=[(0, 30), (5, 10), (15, 20)]))
 print(solution.can_attend_meetings(intervals=[(5, 8), (9, 15)]))
