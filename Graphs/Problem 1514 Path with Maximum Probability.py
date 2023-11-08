@@ -15,7 +15,8 @@ Example 1:
 https://assets.leetcode.com/uploads/2019/09/20/1558_ex1.png
 Input: n = 3, edges = [[0,1],[1,2],[0,2]], succProb = [0.5,0.5,0.2], start = 0, end = 2
 Output: 0.25000
-Explanation: There are two paths from start to end, one having a probability of success = 0.2 and the other has 0.5 * 0.5 = 0.25.
+Explanation: There are two paths from start to end,
+one having a probability of success = 0.2 and the other has 0.5 * 0.5 = 0.25.
 
 Example 2:
 https://assets.leetcode.com/uploads/2019/09/20/1558_ex2.png
@@ -43,7 +44,7 @@ import heapq
 
 class Solution1514:
     def maxProbability(self, n: int, edges: list[list[int]], succProb: list[float], start_node: int,
-                       end_node: int) -> float:
+                       end_node: int) -> float:              # Dijkstra's Algorithm
         adjacency = collections.defaultdict(list)
         for i in range(len(edges)):
             source, distance = edges[i]

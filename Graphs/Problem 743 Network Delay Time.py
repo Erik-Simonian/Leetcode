@@ -34,7 +34,7 @@ import heapq
 
 
 class Solution743:
-    def networkDelayTime(self, times: list[list[int]], n: int, k: int) -> int:
+    def networkDelayTime(self, times: list[list[int]], n: int, k: int) -> int:  # Dijkstra's Algorithm
         edges = collections.defaultdict(list)
         for u, v, w in times:
             edges[u].append((v, w))

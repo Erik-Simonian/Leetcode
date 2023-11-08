@@ -36,7 +36,7 @@ import heapq
 
 
 class Solution778:
-    def swimInWater(self, grid: list[list[int]]):
+    def swimInWater(self, grid: list[list[int]]):        # Dijkstra's Algorithm
         n = len(grid)
         visited = set()
         min_heap = [[grid[0][0], 0, 0]]
