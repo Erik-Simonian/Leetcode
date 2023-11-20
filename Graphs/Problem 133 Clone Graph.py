@@ -36,7 +36,8 @@ Example 2:
 https://assets.leetcode.com/uploads/2020/01/07/graph.png
 Input: adjList = [[]]
 Output: [[]]
-Explanation: Note that the input contains one empty list. The graph consists of only one node with val = 1 and it does not have any neighbors.
+Explanation: Note that the input contains one empty list.
+The graph consists of only one node with val = 1 and it does not have any neighbors.
 
 Example 3:
 Input: adjList = []
