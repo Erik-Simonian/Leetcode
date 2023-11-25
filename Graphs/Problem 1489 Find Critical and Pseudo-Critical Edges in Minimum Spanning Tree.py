@@ -40,5 +40,66 @@ Constraints:
     All pairs (ai, bi) are distinct."""
 
 
+class UnionFind:
+    def __init__(self, n):
+        self.parent = [i for i in range(n)]
+        self.rank = [1] * n
+
+    def find(self, node):
+        while node != self.parent[node]:
+            self.parent[node] = self.parent[self.parent[node]]
+            node = self.parent[node]
+        return node
+
+    def union(self, node1, node2):
+        p1, p2 = self.find(node1), self.find(node2)
+        if p1 == p2:
+            return False
+        if self.rank[p1] > self.rank[p2]:
+            self.parent[p2] = p1
+            self.rank[p1] += self.rank[p2]
+        else:
+            self.parent[p1] = p2
+            self.rank[p2] += self.rank[p1]
+        return True
+
+
 class Solution1489:
     def findCriticalAndPseudoCriticalEdges(self, n: int, edges: list[list[int]]) -> list[list[int]]:
+        for i, edge in enumerate(edges):
+            edge.append(i)
+
+        edges.sort(key=lambda e: e[2])
+        mst_weight = 0
+        union_find = UnionFind(n)
+        for v1, v2, w, i in edges:
+            if union_find.union(v1, v2):
+                mst_weight += w
+
+        critical, pseudo = [], []
+        for n1, n2, edge_weight, index in edges:
+            weight = 0
+            union_find = UnionFind(n)
+            for ver1, ver2, wei, ind in edges:
+                if index != ind and union_find.union(ver1, ver2):
+                    weight += wei
+            if max(union_find.rank) != n or weight > mst_weight:
+                critical.append(index)
+                continue
+
+            union_find = UnionFind(n)
+            union_find.union(n1, n2)
+            weight = edge_weight
+            for v1, v2, w, j, in edges:
+                if union_find.union(v1, v2):
+                    weight += w
+            if weight == mst_weight:
+                pseudo.append(index)
+
+        return [critical, pseudo]
+
+
+solution = Solution1489()
+print(solution.findCriticalAndPseudoCriticalEdges(n=5, edges=[[0, 1, 1], [1, 2, 1], [2, 3, 2],
+                                                              [0, 3, 2], [0, 4, 3], [3, 4, 3], [1, 4, 6]]))
+print(solution.findCriticalAndPseudoCriticalEdges(n=4, edges=[[0, 1, 1], [1, 2, 1], [2, 3, 1], [0, 3, 1]]))
