@@ -38,7 +38,6 @@ Constraints:
 
 class Solution374:
     def guessNumber(self, n: int) -> int:
-        nums = [i for i in range(1, n)]
         left = 1
         right = n
         while left < right:
